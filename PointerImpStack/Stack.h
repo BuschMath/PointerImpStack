@@ -21,6 +21,8 @@ public:
 	bool IsFull();
 	bool IsEmpty();
 
+	Stack operator=(Stack orignal);
+
 private:
 	Node* head;
 };

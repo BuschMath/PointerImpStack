@@ -47,3 +47,25 @@ bool Stack::IsEmpty()
 {
 	return false;
 }
+
+Stack Stack::operator=(Stack orignal)
+{
+	Stack copy;
+	Stack temp;
+
+	// Copy values from orignal to inverted temp stack.
+	while (!orignal.IsEmpty())
+	{
+		temp.Push(orignal.Top());
+		orignal.Pop();
+	}
+
+	while (!temp.IsEmpty())
+	{
+		orignal.Push(temp.Top());
+		copy.Push(temp.Top());
+		temp.Pop();
+	}
+
+	return copy;
+}
